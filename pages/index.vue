@@ -240,6 +240,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="animate-slide-left mt-5">
+  <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+    <h3 class="text-2xl font-semibold mb-6">Mes compétences</h3>
+    <p class="text-gray-300 mb-6">
+      Grâce à mon expérience dans le développement full-stack, je maîtrise un ensemble de technologies modernes me permettant de créer des applications performantes, robustes et élégantes.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div v-for="skill in skills" :key="skill.name" class="flex items-center">
+        <i :class="skill.icon" class="text-indigo-500 text-lg mr-3"></i>
+        <span class="text-gray-300">{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
             </section>
 
@@ -274,7 +290,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-gray-300">Email</h4>
-                                            <p class="text-gray-400">contact@monportfolio.com</p>
+                                            <p class="text-gray-400">fredagnilo38@gmail.com</p>
                                         </div>
                                     </div>
 
@@ -284,7 +300,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-gray-300">Localisation</h4>
-                                            <p class="text-gray-400">Paris, France</p>
+                                            <p class="text-gray-400">Benin, Calavi</p>
                                         </div>
                                     </div>
 
@@ -294,7 +310,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-gray-300">Téléphone</h4>
-                                            <p class="text-gray-400">+33 6 12 34 56 78</p>
+                                            <p class="text-gray-400">+229 01 66 11 83 96</p>
                                         </div>
                                     </div>
                                 </div>
@@ -304,7 +320,7 @@
                                     <div class="flex space-x-4">
                                         <button
                                             class="p-3 bg-gray-700/50 hover:bg-indigo-500/20 hover:text-indigo-400 rounded-lg transition-colors">
-                                            <i class="fab fa-linkedin-in text-xl"></i>
+                                            <i class="fab fa-linkedin-in text-xl text-blue-600"></i>
                                         </button>
                                         <button
                                             class="p-3 bg-gray-700/50 hover:bg-purple-500/20 hover:text-purple-400 rounded-lg transition-colors">
@@ -437,130 +453,147 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+
 // Données réactives
 const darkMode = ref(true)
 const showScrollTop = ref(false)
 const navLinks = ref([
-  { id: 1, label: 'Accueil', href: '#home' },
-  { id: 2, label: 'À propos', href: '#about' },
-  { id: 3, label: 'Projets', href: '#projects' },
-  { id: 4, label: 'Contact', href: '#contact' },
+    { id: 1, label: 'Accueil', href: '#home' },
+    { id: 2, label: 'À propos', href: '#about' },
+    { id: 3, label: 'Projets', href: '#projects' },
+    { id: 4, label: 'Contact', href: '#contact' },
 ])
 const keySkills = ref([
-  'Développement Frontend',
-  'Architecture Backend',
-  'Design UI/UX',
-  'Optimisation SEO',
-  'Responsive Design',
-  'Intégration continue',
+    'Développement Frontend',
+    'Architecture Backend',
+    'Design UI/UX',
+    'Optimisation SEO',
+    'Responsive Design',
+    'Intégration continue',
 ])
 const projects = ref([
-  {
-    id: 1,
-    title: 'Plateforme E-commerce',
-    description: 'Solution complète avec gestion de produits, panier et paiement sécurisé.',
-    image: 'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-    category: 'Full-Stack',
-    technologies: ['Vue.js', 'Nuxt.js', 'Node.js', 'MongoDB'],
-  },
-  {
-    id: 2,
-    title: 'Dashboard Analytics',
-    description: 'Tableau de bord de données avec visualisations interactives en temps réel.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-    category: 'Frontend',
-    technologies: ['Vue.js', 'D3.js', 'Tailwind CSS', 'GraphQL'],
-  },
-  {
-    id: 3,
-    title: 'Application Mobile',
-    description: 'Application cross-platform pour la gestion de tâches et de projets.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-    category: 'Mobile',
-    technologies: ['React Native', 'Firebase', 'Redux', 'TypeScript'],
-  },
+    {
+        id: 1,
+        title: 'Plateforme E-commerce',
+        description: 'Solution complète avec gestion de produits, panier et paiement sécurisé.',
+        image: 'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
+        category: 'Full-Stack',
+        technologies: ['Vue.js', 'Nuxt.js', 'Node.js', 'MongoDB'],
+    },
+    {
+        id: 2,
+        title: 'Dashboard Analytics',
+        description: 'Tableau de bord de données avec visualisations interactives en temps réel.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
+        category: 'Frontend',
+        technologies: ['Vue.js', 'D3.js', 'Tailwind CSS', 'GraphQL'],
+    },
+    {
+        id: 3,
+        title: 'Application Mobile',
+        description: 'Application cross-platform pour la gestion de tâches et de projets.',
+        image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
+        category: 'Mobile',
+        technologies: ['React Native', 'Firebase', 'Redux', 'TypeScript'],
+    },
 ])
+
+const skills = [
+  { name: 'Vue.js', icon: 'fab fa-vuejs' },
+  { name: 'Nuxt.js', icon: 'fab fa-nuxt-js' },
+  { name: 'Node.js', icon: 'fab fa-node-js' },
+  { name: 'Laravel', icon: 'fab fa-laravel' },
+  { name: 'TypeScript', icon: 'fab fa-js' },
+  { name: 'Tailwind CSS', icon: 'fas fa-wind' },
+  { name: 'MySQL', icon: 'fas fa-database' },
+  { name: 'Firebase', icon: 'fas fa-fire' },
+  { name: 'React.js', icon: 'fab fa-react' },
+  { name: 'Flutter', icon: 'fas fa-mobile-alt' },
+  { name: 'Django', icon: 'fab fa-python' },
+  { name: 'Spring Boot', icon: 'fas fa-leaf' },
+]
+
 
 // Gestion du mode sombre
 const toggleTheme = () => {
-  darkMode.value = !darkMode.value
-  if (darkMode.value) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+    darkMode.value = !darkMode.value
+    if (darkMode.value) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
 }
 
 // Gestion du scroll
 const handleScroll = () => {
-  showScrollTop.value = window.scrollY > 300
+    showScrollTop.value = window.scrollY > 300
 }
 
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
 }
 
 const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    const start = window.pageYOffset
-    const target = element.getBoundingClientRect().top + window.pageYOffset - 80
-    const duration = 800
-    const startTime = performance.now()
+    const element = document.getElementById(sectionId)
+    if (element) {
+        const start = window.pageYOffset
+        const target = element.getBoundingClientRect().top + window.pageYOffset - 80
+        const duration = 800
+        const startTime = performance.now()
 
-    const ease = (t) => {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
-    }
+        const ease = (t) => {
+            return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+        }
 
-    const animateScroll = (currentTime) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const easedProgress = ease(progress)
+        const animateScroll = (currentTime) => {
+            const elapsed = currentTime - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            const easedProgress = ease(progress)
 
-      window.scrollTo(0, start + (target - start) * easedProgress)
+            window.scrollTo(0, start + (target - start) * easedProgress)
 
-      if (progress < 1) {
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll)
+            }
+        }
+
         requestAnimationFrame(animateScroll)
-      }
     }
-
-    requestAnimationFrame(animateScroll)
-  }
 }
 
 // Initialisation des animations
 const initAnimations = () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible')
-        }
-      })
-    },
-    { threshold: 0.1 }
-  )
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-visible')
+                }
+            })
+        },
+        { threshold: 0.1 }
+    )
 
-  document
-    .querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right')
-    .forEach((el) => {
-      observer.observe(el)
-    })
+    document
+        .querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right')
+        .forEach((el) => {
+            observer.observe(el)
+        })
 }
 
 // Hooks de cycle de vie
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  handleScroll()
-  document.documentElement.classList.add('dark') // Mode sombre par défaut
-  initAnimations()
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    document.documentElement.classList.add('dark') // Mode sombre par défaut
+    initAnimations()
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
